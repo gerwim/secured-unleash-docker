@@ -1,13 +1,18 @@
 ## Use this image
 
+This image is modified by implementing the basic authentication by default. Set the following environment variables to secure the admin API:
+
+```
+AUTH_USERNAME=username
+AUTH_PASSWORD=password
+```
+
 We have published this image on docker-hub. 
 
 ```bash
-docker pull unleashorg/unleash-server
-docker run -d -e DATABASE_URL=postgres://user:pass@10.200.221.11:5432/unleash unleashorg/unleash-server
+docker pull gerwim/secured-unleash-server
+docker run -d -e DATABASE_URL=postgres://user:pass@10.200.221.11:5432/unleash -e AUTH_USERNAME=username -e AUTH_PASSWORD=password gerwim/secured-unleash-server
 ```
-
-Specifying secrets as environment variables are considered a bad security practice. Therefore, you can instead specify a file where unleash can read the database secret. This is done via the `DATABASE_URL_FILE` environment variable.
 
 
 ## Work locally with this repo 

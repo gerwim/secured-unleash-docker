@@ -1,7 +1,16 @@
 'use strict';
 
 const unleash = require('unleash-server');
+const basicAuthentication = require('./basicAuthentication');
 
-let options = {};
-
-unleash.start(options);
+unleash
+    .start({
+        databaseUrl: process.env.DATABASE_URL,
+        adminAuthentication: 'custom',
+        preRouterHook: basicAuthentication,
+    })
+    .then(unleash => {
+        console.log(
+            `Unleash started on http://localhost:${unleash.app.get('port')}`,
+        );
+    });
