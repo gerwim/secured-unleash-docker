@@ -7,11 +7,11 @@ AUTH_USERNAME=username
 AUTH_PASSWORD=password
 ```
 
-We have published this image on docker-hub. 
+We have published this image on [docker-hub](https://hub.docker.com/r/gerwim/secured-unleash-docker). 
 
 ```bash
-docker pull gerwim/secured-unleash-server
-docker run -d -e DATABASE_URL=postgres://user:pass@10.200.221.11:5432/unleash -e AUTH_USERNAME=username -e AUTH_PASSWORD=password gerwim/secured-unleash-server
+docker pull gerwim/secured-unleash-docker
+docker run -d -e DATABASE_URL=postgres://user:pass@10.200.221.11:5432/unleash -e AUTH_USERNAME=username -e AUTH_PASSWORD=password gerwim/secured-unleash-docker
 ```
 
 
